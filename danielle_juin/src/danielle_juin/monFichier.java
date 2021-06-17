@@ -15,13 +15,24 @@ public class monFichier {
 
 	public static void main(String[] args) throws IOException, FileNotFoundException
 	{
-		FileReader ficALire;
-		BufferedReader entree;
-		int c; 
 		
-		ficALire = new FileReader("monFichier,txt.txt");
-		entree = new BufferedReader(ficALire);
-		c=entree.read();
+		BufferedReader entree;
+		int c;
+		
+		entree = new BufferedReader(new FileReader("monFichier.txt"));
+		
+		
+		while(entree.ready())
+		{
+			c=entree.read();
+			System.out.println((char)c);
+		}
+			
+			
+		entree.close();
+
+		
+		
 	}
 
 }
